@@ -1,4 +1,5 @@
-﻿using biblioteca_mvc.Models;
+﻿using biblioteca_mvc.Database;
+using biblioteca_mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -15,13 +16,33 @@ namespace biblioteca_mvc.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            using (BookContext db = new())
+            {
+
+                List<BookModel> books = db.Books.ToList();
+                return View(books);
+            }
         }
 
-        public IActionResult Privacy()
+        public IActionResult Available()
         {
-            return View();
+            using (BookContext db = new())
+            {
+                List<BookModel> availableBooks = db.Books.Where(book => book.Available).ToList();
+                return View(availableBooks);
+            }
         }
+
+        public IActionResult NonAvailable()
+        {
+            using (BookContext db = new())
+            {
+                List<BookModel> nonAvailableBooks = db.Books.Where(book => !book.Available).ToList();
+                return View(nonAvailableBooks);
+            }
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,10 +1,10 @@
 ﻿@{
-    Layout = "_Layout";
+    Layout = "_LayoutNoFooter";
 }
 
 @model List<BookModel>
 <div class="w-75 mx-auto my-5">
-    <div class="dropdown d-flex justify-content-center my-5">
+    <div class="dropdown d-flex justify-content-center">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ordina per
         </button>
@@ -43,13 +43,14 @@
                             {
                                 <span>Si</span>
                                 ;
-                            } else
+                            }
+                            else
                             {
                                 <span>No</span>
                                 ;
                             }
-                                              
-                                   
+
+
                         }
                     </td>
                     <td>
@@ -58,11 +59,12 @@
                             {
                                 <span>Si</span>
                                 ;
-                            } else
+                            }
+                            else
                             {
                                 <span>No</span>
                                 ;
-                            }   
+                            }
                         }
                     </td>
                 </tr>
