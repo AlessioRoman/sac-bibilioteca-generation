@@ -39,7 +39,7 @@
                     </td>
                     <td>
                         @{
-                            if (book.Ebook)
+                            if (book.Ebook.Equals("Disponibile"))
                             {
                                 <span>Si</span>
                                 ;
@@ -54,7 +54,7 @@
                     </td>
                     <td>
                         @{
-                            if (book.Available)
+                            if (book.Available.Equals("Disponibile"))
                             {
                                 <span>Si</span>
                                 ;

@@ -33,16 +33,18 @@
             <input asp-for="ImageUrl" type="text" class="form-control" required>
             <span asp-validation-for="ImageUrl" class="text-danger"></span>
         </div>
-        <div class="mb-3">
+        <div>
             <label asp-for="Ebook" class="form-label">Ebook</label>
-            <input asp-for="Ebook" type="checkbox" value="Ebook" required>
-            <span asp-validation-for="Ebook" class="text-danger"></span>
+            <select asp-for="Ebook" rows="10" class="d-block w-100 p-1">
+                <option value="Disponibile" selected>Disponibile</option>
+                <option value="Non Disponibile">Non Disponibile</option>
+            </select>
         </div>
-        <div class="mb-3">
             <label asp-for="Available" class="form-label">Available</label>
-            <input asp-for="Available" type="checkbox" value="Available" required>
-            <span asp-validation-for="Available" class="text-danger"></span>
-        </div>
+            <select asp-for="Available" rows="10" class="d-block w-100 p-1">
+                <option value="Disponibile" selected>Disponibile</option>
+                <option value="Non Disponibile">Non Disponibile</option>
+            </select>
         <button type="submit" class="btn btn-primary bg-redText">Salva</button>
     </form>
 </div>

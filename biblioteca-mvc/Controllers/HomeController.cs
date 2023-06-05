@@ -28,7 +28,7 @@ namespace biblioteca_mvc.Controllers
         {
             using (BookContext db = new())
             {
-                List<BookModel> availableBooks = db.Books.Where(book => book.Available).ToList();
+                List<BookModel> availableBooks = db.Books.Where(book => book.Available == "Disponibile").ToList();
                 return View(availableBooks);
             }
         }
@@ -37,7 +37,7 @@ namespace biblioteca_mvc.Controllers
         {
             using (BookContext db = new())
             {
-                List<BookModel> nonAvailableBooks = db.Books.Where(book => !book.Available).ToList();
+                List<BookModel> nonAvailableBooks = db.Books.Where(book => book.Available == "Non Disponibile").ToList();
                 return View(nonAvailableBooks);
             }
         }

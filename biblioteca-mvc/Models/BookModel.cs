@@ -25,8 +25,8 @@ namespace biblioteca_mvc.Models
         [StringLength(300, ErrorMessage = "Il campo URL immagine può contenere al massimo 300 caratteri")]
         public string ImageUrl { get; set; }
 
-        public bool Ebook { get; set; }
-        public bool Available { get; set; }
+        public string Ebook { get; set; }
+        public string Available { get; set; }
 
         public int? CategoryId { get; set; }
         public CategoryModel Category { get; set; }
