@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "_LayoutNoFooter";
+}
+
+@model BookModel
+
+<div class="container">
+    <h2 class="mb-3">Aggiungi libro</h2>
+    <form asp-controller="Libri" asp-action="Create" method="post">
+        @Html.AntiForgeryToken()
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Nome</label>
+            <input asp-for="Name" type="text" class="form-control" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Isbn" class="form-label">ISBN</label>
+            <input asp-for="Isbn" type="text" class="form-control" required>
+            <span asp-validation-for="Isbn" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Author" class="form-label">Author</label>
+            <input asp-for="Author" type="text" class="form-control" required>
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Summary" class="form-label">Summary</label>
+            <textarea asp-for="Summary" rows="10" class="form-control"></textarea>
+            <span asp-validation-for="Summary" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ImageUrl" class="form-label">URL Immagine</label>
+            <input asp-for="ImageUrl" type="text" class="form-control" required>
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Ebook" class="form-label">Ebook</label>
+            <input asp-for="Ebook" type="checkbox" class="form-control" value="Ebook" required>
+            <span asp-validation-for="Ebook" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Available" class="form-label">Available</label>
+            <input asp-for="Available" type="checkbox" class="form-control" value="Available" required>
+            <span asp-validation-for="Available" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary bg-redText">Salva</button>
+    </form>
+</div>
