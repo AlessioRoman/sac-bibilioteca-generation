@@ -6,10 +6,10 @@
                     <a class="nav-link fs-5 text-decoration-none text-success" href="#">Biblioteca Digitale</a>
                 </li>
                 <li>
-                    <a class="nav-link fs-5 text-black " aria-current="page" href="@Url.Action("Index", "Home")">Home</a>
+                    <a class="nav-link fs-5 text-black " aria-current="page" href="@Url.Action("Available", "Home")">Home</a>
                 </li>
                 <li>
-                    <a class="nav-link fs-5 text-black" href="#">Catalogo</a>
+                    <a class="nav-link fs-5 text-black" href="@Url.Action("Index","Home")">Catalogo</a>
                 </li>
                 <partial name="_LoginPartial" />
             </ul>
