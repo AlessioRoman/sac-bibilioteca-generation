@@ -16,18 +16,9 @@ namespace biblioteca_mvc.Controllers
             }
         }
 
-        public IActionResult Create(BookModel bookToCreate)
+        public IActionResult Create()
         {
-            using (BookContext context = new BookContext())
-            {
-                List<BookModel> bookCategories = context.Books.ToList();
-
-                BookModel modelForView = new BookModel();
-                modelForView.ImageUrl = new BookModel();
-                modelForView.Ebook = bookCategories;
-
-                return View("Create", modelForView);
-            }
+            return View();
         }
     }
 
